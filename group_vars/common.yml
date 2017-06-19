@@ -51,4 +51,7 @@ program:
     download_url: https://www.kernel.org/pub/software/scm/git
     version: git-2.13.0
 
-
+# 로그 관리
+log:
+  delete: 365
+  compression: 10

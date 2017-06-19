@@ -1,0 +1,31 @@
+---
+# 디렉토리 생성 ==========================
+- name : 공통 디렉토리 생성
+  sudo : true
+  file : path={{item}}
+         owner={{default_user}}
+         group={{default_group}}
+         state=directory
+         recurse=yes
+  with_items:
+    - "{{path.bin}}"
+    - "{{path.program}}"
+    - "{{path.archive}}"
+    - "{{path.log}}"
+    - "{{path.service}}"
+    - "{{path.script}}"
+    - "{{path.program_src}}"
+    - "{{path.log}}/nginx"
+    - "{{path.log}}/heapdump"
+    - "{{path.log}}/gc"
+# =====================================
+
+
+- name: 공통 라이브러리 설치
+  sudo : true
+  yum: name={{item}} state=present
+  with_items:
+    - "bzip2"
+    - "unzip"
+  when: ansible_distribution == 'CentOS' # CentOS일 경우에만 설치
+
