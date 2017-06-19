@@ -1,0 +1,54 @@
+# ===============
+# USER & GROUP
+# ===============
+default_user: paint
+default_group: paint
+
+# ===============
+# PROXY
+# ===============
+proxy_env:
+  http_proxy: http://proxy.paint.io:3128
+  https_proxy: https://proxy.paint.io:3128
+  no_proxy: .aaa.com, .bbb.io
+
+# ===============
+# PATH
+# ===============
+path:
+  bin: /home/paint/bin
+  program: /home/paint/program
+  archive: /home/paint/archive
+  log: /home/paint/logs
+  service: /home/paint/service
+  script: /home/paint/script
+  program_src: /home/paint/program/src
+  data: /home/paint/data
+  ansible:
+    template: ../../../templates
+  home:
+    jdk: /home/paint/program/jdk
+    nginx: /home/paint/program/nginx
+    play: /home/paint/program/play
+    tomcat: /home/paint/program/tomcat
+    jenkins: /home/paint/program/jenkins
+
+# ===============
+# PROGRAM
+# ===============
+program:
+  nginx.version: nginx-1.10.2
+  play.version: play-1.4.0
+  tomcat8.version: apache-tomcat-8.0.33
+  memcached.version: memcached-1.4.31
+  cronolog.version: cronolog-1.6.2
+  erlang.version: 19.0
+  rabbitmq.version: 3.6.5
+  ruby.version: 2.2.5
+  zk.version: 3.4.9
+  td_agent.version: td-agent-2.2.1-0.x86_64
+  git:
+    download_url: https://www.kernel.org/pub/software/scm/git
+    version: git-2.13.0
+
+
