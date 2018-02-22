@@ -1,0 +1,12 @@
+[alpha]
+alpha-paint-web  project=webserver phase=alpha
+
+[sandbox]
+sandbox-paint-web  project=webserver phase=sandbox
+
+[beta]
+beta-paint-web  project=webserver phase=beta
+
+[real]
+paint-web01  project=webserver phase=real
+paint-web02  project=webserver phase=real
