@@ -1,0 +1,6 @@
+[api:vars]
+phase=alpha
+
+[api]
+alpha-paint-api01
+alpha-paint-api02

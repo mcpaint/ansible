@@ -1,0 +1,13 @@
+---
+project: front
+description: Front web server
+category: front
+domain: xxx
+git:
+usage:
+  nginx: true
+  jdk: true
+  db: false
+env:
+  language: java
+  datasource: dbcp2

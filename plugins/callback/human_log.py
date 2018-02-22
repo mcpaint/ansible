@@ -27,8 +27,11 @@ except ImportError:
     import json
 
 # Fields to reformat output for
-FIELDS = ['cmd', 'command', 'start', 'end', 'delta', 'msg', 'stdout',
-          'stderr', 'results']
+#FIELDS = ['cmd', 'command', 'start', 'end', 'delta', 'msg', 'stdout',
+#          'stderr', 'results']
+
+#FIELDS = ['cmd', 'command', 'delta', 'stdout', 'stderr', 'msg','stdout_lines']
+FIELDS = ['cmd', 'delta', 'stdout', 'stderr']
 
 
 class CallbackModule(object):
@@ -47,12 +50,20 @@ class CallbackModule(object):
                 no_log = data.get('_ansible_no_log')
                 if field in data.keys() and data[field] and no_log != True:
                     output = self._format_output(data[field])
+                    #print("{0}: {1}".format(field, output.replace("\\n","\n")))
+
+
                     #print("\n{0}: {1}".format(field, output.replace("\\n","\n")))
-                    print("- {0}: {1}".format(field, output.replace("\\n","\n")))
+                    #print("- {0}: {1}".format(field, output.replace("\\n","\n")))
                     #if label == 'stderr':
                     #    print("- {0}: \n\n{1}".format(field, output.replace("\\n","\n")))
                     #else :
                     #    print("- {0}: {1}".format(field, output.replace("\\n","\n")))
+
+                    if field == 'cmd':
+                        print("- {0}: {1}".format(field, output.replace("\\n","\n")))
+                    else :
+                        print("- {0}: {1}".format(field, output.replace("\\n","\n")))
 
     def _format_output(self, output):
         # Strip unicode

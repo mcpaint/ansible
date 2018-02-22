@@ -1,0 +1,13 @@
+---
+project: api
+description: API web server
+category: api
+domain: xxx
+git:
+usage:
+  nginx: true
+  jdk: true
+  db: false
+env:
+  language: java
+  datasource: dbcp2
